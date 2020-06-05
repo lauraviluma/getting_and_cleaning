@@ -1,0 +1,129 @@
+This codebook documents the modifications to the following data:
+
+==================================================================
+Human Activity Recognition Using Smartphones Dataset
+Version 1.0
+==================================================================
+Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
+Smartlab - Non Linear Complex Systems Laboratory
+DITEN - Università degli Studi di Genova.
+Via Opera Pia 11A, I-16145, Genoa, Italy.
+activityrecognition@smartlab.ws
+www.smartlab.ws
+==================================================================
+
+The data set "averages.csv" combines data from the following source files:
+-'features.txt': List of all features.
+- 'activity_labels.txt': Links the class labels with their activity name.
+- 'train/X_train.txt': Training set.
+- 'train/y_train.txt': Training labels.
+- 'test/X_test.txt': Test set.
+- 'test/y_test.txt': Test labels.
+- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+- 'test/subject_test.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+
+The data is created in the following order:
+First, all "training" files are merged to the corresponding test files.
+Variable names are assigned from the features.txt file.
+Then the subject, activivity labels and the measurement data sets are merged together.
+Finally, only variables containing "mean" or "std" in the variable name are selected.
+
+Next, the data file is melted on activity and subjectID, and then reshaped by casting and aggregating as means.
+
+The variables included in the "averages.csv" data set:
+identifiers:
+
+ [1] "activity"                                
+ [2] "activitylabel"                           
+ [3] "subjectID"   
+ 
+the following variables contain the average measurements per activity and subject:
+ [4] "1 tBodyAcc-mean()-X"                     
+ [5] "2 tBodyAcc-mean()-Y"                     
+ [6] "3 tBodyAcc-mean()-Z"                     
+ [7] "41 tGravityAcc-mean()-X"                 
+ [8] "42 tGravityAcc-mean()-Y"                 
+ [9] "43 tGravityAcc-mean()-Z"                 
+[10] "81 tBodyAccJerk-mean()-X"                
+[11] "82 tBodyAccJerk-mean()-Y"                
+[12] "83 tBodyAccJerk-mean()-Z"                
+[13] "121 tBodyGyro-mean()-X"                  
+[14] "122 tBodyGyro-mean()-Y"                  
+[15] "123 tBodyGyro-mean()-Z"                  
+[16] "161 tBodyGyroJerk-mean()-X"              
+[17] "162 tBodyGyroJerk-mean()-Y"              
+[18] "163 tBodyGyroJerk-mean()-Z"              
+[19] "201 tBodyAccMag-mean()"                  
+[20] "214 tGravityAccMag-mean()"               
+[21] "227 tBodyAccJerkMag-mean()"              
+[22] "240 tBodyGyroMag-mean()"                 
+[23] "253 tBodyGyroJerkMag-mean()"             
+[24] "266 fBodyAcc-mean()-X"                   
+[25] "267 fBodyAcc-mean()-Y"                   
+[26] "268 fBodyAcc-mean()-Z"                   
+[27] "294 fBodyAcc-meanFreq()-X"               
+[28] "295 fBodyAcc-meanFreq()-Y"               
+[29] "296 fBodyAcc-meanFreq()-Z"               
+[30] "345 fBodyAccJerk-mean()-X"               
+[31] "346 fBodyAccJerk-mean()-Y"               
+[32] "347 fBodyAccJerk-mean()-Z"               
+[33] "373 fBodyAccJerk-meanFreq()-X"           
+[34] "374 fBodyAccJerk-meanFreq()-Y"           
+[35] "375 fBodyAccJerk-meanFreq()-Z"           
+[36] "424 fBodyGyro-mean()-X"                  
+[37] "425 fBodyGyro-mean()-Y"                  
+[38] "426 fBodyGyro-mean()-Z"                  
+[39] "452 fBodyGyro-meanFreq()-X"              
+[40] "453 fBodyGyro-meanFreq()-Y"              
+[41] "454 fBodyGyro-meanFreq()-Z"              
+[42] "503 fBodyAccMag-mean()"                  
+[43] "513 fBodyAccMag-meanFreq()"              
+[44] "516 fBodyBodyAccJerkMag-mean()"          
+[45] "526 fBodyBodyAccJerkMag-meanFreq()"      
+[46] "529 fBodyBodyGyroMag-mean()"             
+[47] "539 fBodyBodyGyroMag-meanFreq()"         
+[48] "542 fBodyBodyGyroJerkMag-mean()"         
+[49] "552 fBodyBodyGyroJerkMag-meanFreq()"     
+[50] "555 angle(tBodyAccMean,gravity)"         
+[51] "556 angle(tBodyAccJerkMean),gravityMean)"
+[52] "557 angle(tBodyGyroMean,gravityMean)"    
+[53] "558 angle(tBodyGyroJerkMean,gravityMean)"
+[54] "559 angle(X,gravityMean)"                
+[55] "560 angle(Y,gravityMean)"                
+[56] "561 angle(Z,gravityMean)"
+
+The following variables contain the average standard deviations of the measurements per activity and subject
+[57] "4 tBodyAcc-std()-X"                      
+[58] "5 tBodyAcc-std()-Y"                      
+[59] "6 tBodyAcc-std()-Z"                      
+[60] "44 tGravityAcc-std()-X"                  
+[61] "45 tGravityAcc-std()-Y"                  
+[62] "46 tGravityAcc-std()-Z"                  
+[63] "84 tBodyAccJerk-std()-X"                 
+[64] "85 tBodyAccJerk-std()-Y"                 
+[65] "86 tBodyAccJerk-std()-Z"                 
+[66] "124 tBodyGyro-std()-X"                   
+[67] "125 tBodyGyro-std()-Y"                   
+[68] "126 tBodyGyro-std()-Z"                   
+[69] "164 tBodyGyroJerk-std()-X"               
+[70] "165 tBodyGyroJerk-std()-Y"               
+[71] "166 tBodyGyroJerk-std()-Z"               
+[72] "202 tBodyAccMag-std()"                   
+[73] "215 tGravityAccMag-std()"                
+[74] "228 tBodyAccJerkMag-std()"               
+[75] "241 tBodyGyroMag-std()"                  
+[76] "254 tBodyGyroJerkMag-std()"              
+[77] "269 fBodyAcc-std()-X"                    
+[78] "270 fBodyAcc-std()-Y"                    
+[79] "271 fBodyAcc-std()-Z"                    
+[80] "348 fBodyAccJerk-std()-X"                
+[81] "349 fBodyAccJerk-std()-Y"                
+[82] "350 fBodyAccJerk-std()-Z"                
+[83] "427 fBodyGyro-std()-X"                   
+[84] "428 fBodyGyro-std()-Y"                   
+[85] "429 fBodyGyro-std()-Z"                   
+[86] "504 fBodyAccMag-std()"                   
+[87] "517 fBodyBodyAccJerkMag-std()"           
+[88] "530 fBodyBodyGyroMag-std()"              
+[89] "543 fBodyBodyGyroJerkMag-std()" 
+
